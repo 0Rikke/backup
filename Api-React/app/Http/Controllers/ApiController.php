@@ -21,7 +21,8 @@ class ApiController extends Controller
       public function getCategories($id) {
         $userCategories =
         DB::table('categories')
-        ->where('id','=',$id)
+        ->select('mercado','home','work')
+        ->where('id_user','=',$id)
         ->get();
 
         //essa aqui ta certo já so testa
