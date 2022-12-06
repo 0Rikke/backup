@@ -18,9 +18,15 @@ use App\Http\Controllers\ApiController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+/*
+        categorias
+*/
 
-Route::get('categories',[ApiController::class, 'getAllcategories']);
 Route::get('categories/{id}', [ApiController::class, 'getCategories']);
-Route::post('categories', [ApiController::class, 'createCategories']);
-Route::put('categories/{id}', [ApiController::class, 'updateCategories']);
-Route::delete('categories/{id}',[ApiController::class, 'deleteCategories']);
+Route::post('categories/create', [ApiController::class, 'createCategories']);
+Route::put('categories/update/{id}', [ApiController::class, 'updateCategories']);
+Route::delete('categories/delete/{id}',[ApiController::class, 'deleteCategories']);
+/*
+        tasks
+*/
+Route::get('tasks/{id}', [ApiController::class,'getTasks'] );
