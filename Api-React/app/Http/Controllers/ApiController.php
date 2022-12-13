@@ -42,7 +42,7 @@ class ApiController extends Controller
       public function getTasks($id) {
         $userTasks =
         DB::table('tasks')
-        ->select('nome','priority','id')
+        ->select('nome','id')
         ->where('id_user','=',$id)
         ->get();
 
